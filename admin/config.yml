@@ -5,6 +5,15 @@ backend:
 media_folder: "images/uploads"
 
 collections:
+  - name: "posts"
+    label: "Post"
+    folder: "_posts"
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "title"}
+      - {label: "Title", name: "title", widget: "title"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Body", name: "body", widget: "markdown"}
   - name: "friends" # Used in routes, e.g., /admin/collections/blog
     label: "Friend" # Used in the UI
     folder: "_friends" # The path to the folder where the documents are stored
