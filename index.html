@@ -3,3 +3,8 @@ layout: default
 ---
 
 My content goes here. And change it.
+
+{% for friend in site.friends %}
+  <h2>{{ friend.name }}</h2>
+  <p>{{ friend.location }}</p>
+{% endfor %}

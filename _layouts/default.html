@@ -6,10 +6,24 @@
   <link rel="stylesheet" type="text/css" href="/styles.css">
 
   <script type="text/javascript" src="http://twitter.com/script.js"></script>
+
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
 
   {{ content }}
+
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
